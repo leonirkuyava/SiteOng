@@ -1,0 +1,30 @@
+<br>
+<br>
+<br>
+<div class="container" >
+<h1>Cadastrar Usúario</h1>
+<form action="/cadUsuario" method="POST" >
+    <input type="text" name="nome" placeholder="informe o nome"/><br><br>
+    <input type="password" name="senha" placeholder="informe a senha"/>
+    <br><br>
+    <input type="submit" name="conectar">
+</form>
+</div>
+<br>
+<br>
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Senha</th>
+        <th>Atualizar</th>
+        <th>Excluir</th>
+    </tr>
+    {{#each doador}}
+        <tr>
+            <td>{{nome}}</td>
+            <td>{{senha}}</td>
+            <td><a href="#">Modificar</a></td>  
+            <td><a href="#">Apagar</a></td>
+        </tr>
+    {{/each}}
+</table>
