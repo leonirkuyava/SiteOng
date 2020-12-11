@@ -1,0 +1,17 @@
+nav{
+    font-size: 25px;
+    
+}
+
+body nav div div a {
+   margin-right: 50px;
+   margin-left: 50px;
+   padding: 10%;
+}
+
+.stilo-card {
+    left: 20%;
+    position: absolute;
+}
+
+
