@@ -36,10 +36,27 @@ app.get('/cadastro',function(req,res){
 
 app.use('/static', express.static(__dirname + '/public'));
 
+//vamo criar mais uma rota e ela dara para um formulário
+app.get('/update/:id', function(req,res){
+    usuario.findAll({where:{'id' : req.params.id}}).then(function(doadores){
+        res.render('atualiza',{doador: doadores.map(pagamento => pagamento.toJSON())})
+    })
+})
 
+//depois vamos criar essa rota que envia para o banco e depois chama o formulario
+app.post('/updateUsuario',function(req,res){
+    usuario.update({nome:req.body.nome,senha:req.body.senha},{
+        where:{id:req.body.codigo}}
+    ).then(function(){
+        usuario.findAll().then(function(doadores){
+        res.render('formulario',{doador:doadores.map(pagamento => pagamento.toJSON())})
+    })
+    }).catch(function(erro){
+        res.send("Erro"+erro)
+    })
+})
 
 //esse bloco é disparado pelo enviar do formulário
-
 app.post('/cadUsuario',function(req,res){
     usuario.create({
         nome:req.body.nome,
@@ -53,6 +70,9 @@ app.post('/cadUsuario',function(req,res){
     })
 
 })
+
+//flaito
+
 
 app.get('/delete/:id',function(req,res){
     usuario.destroy({
