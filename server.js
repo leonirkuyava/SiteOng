@@ -71,8 +71,6 @@ app.post('/cadUsuario',function(req,res){
 
 })
 
-//flaito
-
 
 app.get('/delete/:id',function(req,res){
     usuario.destroy({
