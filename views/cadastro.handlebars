@@ -80,7 +80,7 @@
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="inputCity">Telefone para Contato</label>
       <input type="text" class="form-control" id="inputCity" placeholder="Digite um telefone para contato">
     </div>
@@ -96,3 +96,46 @@
   </div>
   <button type="submit" class="btn btn-dark">Cadastrar</button>
 </form>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $('#photoimg').die('click').live('change', function() {
+
+        $("#imageform").ajaxForm({
+          target: '#preview',
+          beforeSubmit: function(){
+            console.log('Antes de enviar');
+            $("#imageloadstatus").show();
+            $("#imageloadbutton").hide();
+          },
+          success:function(){
+            console.log('Envio com sucesso');
+            $("#imageloadstatus").hide();
+            $("#imageloadbutton").show();
+          },
+          error:function(){
+            console.log('Erro ao realizar operação');
+            $("#imageloadstatus").hide();
+            $("#imageloadbutton").show();
+          }
+        }).submit();
+      });
+    });
+  </script>
+
+  <div>
+    <div id='preview'></div>
+    <form id="uploadImagem" method="post" enctype="multipart/form-data" action='imagem.js'>
+      <h1>Adicionar imagem da Ong</h1>
+      <div id='imageloadstatus' style='display:none'>
+        <img src="loader.gif" alt="A carregar....">
+      </div>
+      <div id='imageloadbutton'>
+        <input type="file" name="photos[]" id="photoimg" multiple="true">
+      </div>
+    </form>
+  </div>
+
+
+
