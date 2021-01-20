@@ -13,3 +13,11 @@ body nav div div a {
     left: 20%;
     position: absolute;
 }
+
+#botaoCadastrar {
+    margin-left: 0%;
+}
+
+#imagemOng {
+    font-size: 25px;
+}

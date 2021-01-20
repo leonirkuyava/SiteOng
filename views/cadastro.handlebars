@@ -44,33 +44,33 @@
       <label for="inputEstado">Estado</label>
       <select id="inputEstado" class="form-control">
         <option selected>Escolher...</option>
-        <option>Acre (AC)</option>
-        <option>Alagoas (AL)</option>
-        <option>Amapá (AP)</option>
-        <option>Amazonas (AM)</option>
-        <option>Bahia (BA)</option>
-        <option>Ceará (CE)</option>
-        <option>Distrito Federal (DF)</option>
-        <option>Espírito Santo (ES)</option>
-        <option>Goiás (GO)</option>
-        <option>Maranhão (MA)</option>
-        <option>Mato Grosso (MT)</option>
-        <option>Mato Grosso do Sul (MS)</option>
-        <option>Minas Gerais (MG)</option>
-        <option>Pará (PA)</option>
-        <option>Paraíba (PB)</option>
-        <option>Paraná (PR)</option>
-        <option>Pernambuco (PE)</option>
-        <option>Piauí (PI)</option>
-        <option>Rio de Janeiro (RJ)</option>
-        <option>Rio Grande do Norte (RN)</option>
-        <option>Rio Grande do Sul (RS)</option>
-        <option>Rondônia (RO)</option>
-        <option>Roraima (RR)</option>
-        <option>Santa Catarina (SC)</option>
-        <option>São Paulo (SP)</option>
-        <option>Sergipe (SE)</option>
-        <option>Tocantins (TO)</option>
+        <option value="AC">Acre (AC)</option>
+        <option value="AL">Alagoas (AL)</option>
+        <option value="AP">Amapá (AP)</option>
+        <option value="AM">Amazonas (AM)</option>
+        <option value="BA">Bahia (BA)</option>
+        <option value="CE">Ceará (CE)</option>
+        <option value="DF">Distrito Federal (DF)</option>
+        <option value="ES">Espírito Santo (ES)</option>
+        <option value="GO">Goiás (GO)</option>
+        <option value="MA">Maranhão (MA)</option>
+        <option value="MT">Mato Grosso (MT)</option>
+        <option value="MS">Mato Grosso do Sul (MS)</option>
+        <option value="MG">Minas Gerais (MG)</option>
+        <option value="PA">Pará (PA)</option>
+        <option value="PB">Paraíba (PB)</option>
+        <option value="PR">Paraná (PR)</option>
+        <option value="PE">Pernambuco (PE)</option>
+        <option value="PI">Piauí (PI)</option>
+        <option value="RJ">Rio de Janeiro (RJ)</option>
+        <option value="RN">Rio Grande do Norte (RN)</option>
+        <option value="RS">Rio Grande do Sul (RS)</option>
+        <option value="RO">Rondônia (RO)</option>
+        <option value="RR">Roraima (RR)</option>
+        <option value="SC">Santa Catarina (SC)</option>
+        <option value="SP">São Paulo (SP)</option>
+        <option value="SE">Sergipe (SE)</option>
+        <option value="TO">Tocantins (TO)</option>
       </select>
     </div>
     <div class="form-group col-md-2 ">
@@ -85,6 +85,7 @@
       <input type="text" class="form-control" id="inputCity" placeholder="Digite um telefone para contato">
     </div>
   </div>
+  
 
   <div class="form-group">
     <div class="form-check">
@@ -94,9 +95,6 @@
       </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-dark">Cadastrar</button>
-</form>
-
   <script type="text/javascript">
     $(document).ready(function() {
 
@@ -127,7 +125,7 @@
   <div>
     <div id='preview'></div>
     <form id="uploadImagem" method="post" enctype="multipart/form-data" action='imagem.js'>
-      <h1>Adicionar imagem da Ong</h1>
+      <h1 id="imagemOng"> Adicionar imagem da Ong </h1>
       <div id='imageloadstatus' style='display:none'>
         <img src="loader.gif" alt="A carregar....">
       </div>
@@ -135,7 +133,13 @@
         <input type="file" name="photos[]" id="photoimg" multiple="true">
       </div>
     </form>
+    <br>
+    <br>
+    <button id="botaoCadastrar" type="submit" class="btn btn-dark">Cadastrar</button>
   </div>
+</form>
+
+  
 
 
 
