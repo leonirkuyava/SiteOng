@@ -16,9 +16,9 @@ app.set('view engine','handlebars')
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
-app.get('/login',function(req,res){
+app.get('/cadastro',function(req,res){
     usuario.findAll().then(function(doadores){
-        res.render('formulario',{doador:doadores.map(pagamento => pagamento.toJSON())})
+        res.render('cadastro',{doador:doadores.map(pagamento => pagamento.toJSON())})
     })
 })
 app.get('/', function (req,res){
@@ -28,6 +28,10 @@ app.get('/', function (req,res){
 
 app.get('/doeAgora', function(req,res){
     res.render ('doeAgora')
+})
+
+app.get('/login', function(req,res){
+    res.render ('login')
 })
 
 app.get('/cadastro',function(req,res){
@@ -60,10 +64,20 @@ app.post('/updateUsuario',function(req,res){
 app.post('/cadUsuario',function(req,res){
     usuario.create({
         nome:req.body.nome,
-        senha:req.body.senha    
+        senha:req.body.senha,
+        email:req.body.email,
+        cpf:req.body.cpf,
+        endereco:req.body.endereco,
+        complemento:req.body.complemento,
+        cidade:req.body.cidade,
+        estado:req.body.estado,
+        cep:req.body.cep,
+        telefoneParaContato:req.body.telefoneParaContato,
+        confirmarDados:req.body.confirmarDados
+
     }).then(function(){
         usuario.findAll().then(function(doadores){
-        res.render('formulario', {doador: doadores.map(pagamento => pagamento.toJSON())})
+        res.render('cadastro', {doador: doadores.map(pagamento => pagamento.toJSON())})
     })
     }).catch(function(erro){
         res.send("Erro"+erro)

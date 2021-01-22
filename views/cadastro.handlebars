@@ -1,48 +1,48 @@
 <br>
 <br>
-<form class="container">
+<form class="container" action="/cadUsuario" method="POST">
   
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Usuário</label>
-      <input type="text" class="form-control" id="inputUsario" placeholder="Nome de Usuário">
+      <label for="inputPassword4">Nome</label>
+      <input type="text" class="form-control" id="inputUsario" name="nome" placeholder="Nome de Usuário">
     </div>
     <div class="form-group col-md-6">
       <label for="inputEmail4">E-mail</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="E-mail">
+      <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="E-mail">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputPassword4">Senha</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+      <input type="password" class="form-control" id="inputPassword4" name="senha" placeholder="Senha">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">CPF / CNPJ</label>
-      <input type="text" class="form-control" id="inputCpf" placeholder=" Digite seu CPF / CNPJ">
+      <input type="text" class="form-control" id="inputCpf" name="cpf" placeholder=" Digite seu CPF / CNPJ">
     </div>
   </div>
   
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputAddress">Endereço</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="Rua Paraná, nº 0">
+      <input type="text" class="form-control" id="inputAddress" name="endereco" placeholder="Rua Paraná, nº 0">
     </div>
     <div class="form-group col-md-6">
       <label for="inputAddress2">Complemento</label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
+      <input type="text" class="form-control" id="inputAddress2" name="complemento" placeholder="Apartamento, hotel, casa, etc.">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">Cidade</label>
-      <input type="text" class="form-control" id="inputCity" placeholder="Selecione uma Cidade">
+      <input type="text" class="form-control" id="inputCity" name="cidade" placeholder="Selecione uma Cidade">
     </div>
     <div class="form-group col-md-4">
       <label for="inputEstado">Estado</label>
-      <select id="inputEstado" class="form-control">
+      <select id="inputEstado" name="estado" class="form-control">
         <option selected>Escolher...</option>
         <option value="AC">Acre (AC)</option>
         <option value="AL">Alagoas (AL)</option>
@@ -75,21 +75,20 @@
     </div>
     <div class="form-group col-md-2 ">
       <label for="inputCEP">CEP</label>
-      <input type="text"  class="form-control " pattern="\d{5}-?\d{3}" placeholder="Ex: 0000-000" id="inputCEP">
+      <input type="text"  class="form-control " pattern="\d{5}-?\d{3}" name="cep" placeholder="Ex: 0000-000" id="inputCEP">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-4">
       <label for="inputCity">Telefone para Contato</label>
-      <input type="text" class="form-control" id="inputCity" placeholder="Digite um telefone para contato">
+      <input type="text" class="form-control" id="inputCity" name="telefoneParaContato" placeholder="Digite um telefone para contato">
     </div>
   </div>
   
-
   <div class="form-group">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <input class="form-check-input" type="checkbox"  name="confirmarDados" id="gridCheck">
       <label class="form-check-label" for="gridCheck">
         Confirmar Dados
       </label>
