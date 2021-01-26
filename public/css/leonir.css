@@ -4,8 +4,8 @@ nav{
 }
 
 body nav div div a {
-   margin-right: 50px;
-   margin-left: 50px;
+   margin-right: 25px;
+   margin-left: 25px;
    padding: 10%;
 }
 
@@ -22,10 +22,17 @@ body nav div div a {
     font-size: 25px;
 }
 
-#login {
-    margin-left: 35%;
-}
 
 #tituloLogin {
-    margin-left: 39%;
+    margin: auto;
+    text-align: center;
+}
+
+#cadastrarDoacao{
+    margin: auto;
+    text-align: center;
+}
+
+#tamanhoDaFonte{
+    font-size: 25px;
 }

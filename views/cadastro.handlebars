@@ -19,8 +19,8 @@
       <input type="password" class="form-control" id="inputPassword4" name="senha" placeholder="Senha">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">CPF / CNPJ</label>
-      <input type="text" class="form-control" id="inputCpf" name="cpf" placeholder=" Digite seu CPF / CNPJ">
+      <label for="inputPassword4">CPF</label>
+      <input type="text" class="form-control" id="inputCpf" name="cpf" placeholder=" Digite seu CPF">
     </div>
   </div>
   
@@ -94,48 +94,9 @@
       </label>
     </div>
   </div>
-  <script type="text/javascript">
-    $(document).ready(function() {
-
-      $('#photoimg').die('click').live('change', function() {
-
-        $("#imageform").ajaxForm({
-          target: '#preview',
-          beforeSubmit: function(){
-            console.log('Antes de enviar');
-            $("#imageloadstatus").show();
-            $("#imageloadbutton").hide();
-          },
-          success:function(){
-            console.log('Envio com sucesso');
-            $("#imageloadstatus").hide();
-            $("#imageloadbutton").show();
-          },
-          error:function(){
-            console.log('Erro ao realizar operação');
-            $("#imageloadstatus").hide();
-            $("#imageloadbutton").show();
-          }
-        }).submit();
-      });
-    });
-  </script>
-
-  <div>
-    <div id='preview'></div>
-    <form id="uploadImagem" method="post" enctype="multipart/form-data" action='imagem.js'>
-      <h1 id="imagemOng"> Adicionar imagem da Ong </h1>
-      <div id='imageloadstatus' style='display:none'>
-        <img src="loader.gif" alt="A carregar....">
-      </div>
-      <div id='imageloadbutton'>
-        <input type="file" name="photos[]" id="photoimg" multiple="true">
-      </div>
-    </form>
-    <br>
-    <br>
-    <button id="botaoCadastrar" type="submit" class="btn btn-dark">Cadastrar</button>
-  </div>
+  
+<button id="botaoCadastrar" type="submit" class="btn btn-dark">Cadastrar</button>
+  
 </form>
 
   
