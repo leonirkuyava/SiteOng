@@ -98,8 +98,27 @@
 <button id="botaoCadastrar" type="submit" class="btn btn-dark">Cadastrar</button>
   
 </form>
+<br>
+<br>
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Senha</th>
+        <th>Cep</th>
+        <th>Atualizar</th>
+        <th>Excluir</th>
+    </tr>
+    {{#each doador}}
+        <tr>
+            <td>{{nome}}</td>
+            <td>{{senha}}</td>
+            <td>{{cep}}</td>
+            <td><a href="/update/{{id}}">Modificar</a></td>  
+            <td><a href="/delete/{{id}}">Apagar</a></td>
+        </tr>
+    {{/each}}
+</table>
 
-  
 
 
 

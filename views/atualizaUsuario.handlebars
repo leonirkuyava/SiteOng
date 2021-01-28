@@ -1,0 +1,102 @@
+<h1 id="atualizarUsuario">Atualização de Usuário</h1>
+{{#each doador}}
+
+<form action="/updateUsuario" method="POST" class="container">
+    <div class="form-row">
+
+        <div class="form-group col-md-2">
+            <label>ID</label>
+            <input type="text" class="form-control" id="inputUsario" name="id" value={{id}}>
+        </div>
+
+        <div class="form-group col-md-5">
+            <label for="inputPassword4">Nome</label>
+            <input type="text" class="form-control" id="inputUsario" name="nome" value={{nome}}>
+
+        </div>
+        <div class="form-group col-md-5">
+            <label for="inputEmail4">E-mail</label>
+            <input type="email" class="form-control" id="inputEmail4" name="email" value={{email}}>
+        </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Senha</label>
+            <input type="password" class="form-control" id="inputPassword4" name="senha" value={{senha}}>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">CPF</label>
+            <input type="text" class="form-control" id="inputCpf" name="cpf" value={{cpf}}>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputAddress">Endereço</label>
+            <input type="text" class="form-control" id="inputAddress" name="endereco" value={{endereco}}>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputAddress2">Complemento</label>
+            <input type="text" class="form-control" id="inputAddress2" name="complemento" value={{complemento}}>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputCity">Cidade</label>
+            <input type="text" class="form-control" id="inputCity" name="cidade" value={{cidade}}>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputEstado">Estado</label>
+            <select id="inputEstado" name="estado" class="form-control">
+                <option selected>Escolher...</option>
+                <option value="AC">Acre (AC)</option>
+                <option value="AL">Alagoas (AL)</option>
+                <option value="AP">Amapá (AP)</option>
+                <option value="AM">Amazonas (AM)</option>
+                <option value="BA">Bahia (BA)</option>
+                <option value="CE">Ceará (CE)</option>
+                <option value="DF">Distrito Federal (DF)</option>
+                <option value="ES">Espírito Santo (ES)</option>
+                <option value="GO">Goiás (GO)</option>
+                <option value="MA">Maranhão (MA)</option>
+                <option value="MT">Mato Grosso (MT)</option>
+                <option value="MS">Mato Grosso do Sul (MS)</option>
+                <option value="MG">Minas Gerais (MG)</option>
+                <option value="PA">Pará (PA)</option>
+                <option value="PB">Paraíba (PB)</option>
+                <option value="PR">Paraná (PR)</option>
+                <option value="PE">Pernambuco (PE)</option>
+                <option value="PI">Piauí (PI)</option>
+                <option value="RJ">Rio de Janeiro (RJ)</option>
+                <option value="RN">Rio Grande do Norte (RN)</option>
+                <option value="RS">Rio Grande do Sul (RS)</option>
+                <option value="RO">Rondônia (RO)</option>
+                <option value="RR">Roraima (RR)</option>
+                <option value="SC">Santa Catarina (SC)</option>
+                <option value="SP">São Paulo (SP)</option>
+                <option value="SE">Sergipe (SE)</option>
+                <option value="TO">Tocantins (TO)</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2 ">
+            <label for="inputCEP">CEP</label>
+            <input type="text" class="form-control " pattern="\d{5}-?\d{3}" name="cep" value={{cep}} id="inputCEP">
+        </div>
+    </div>
+    
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputCity">Telefone para Contato</label>
+            <input type="text" class="form-control" id="inputCity" name="telefoneParaContato"
+                value={{telefoneParaContato}}>
+        </div>
+    </div>
+
+    <button id="botaoAtualizar" type="submit" class="btn btn-dark">Aplicar Alteração</button>
+
+</form>
+{{/each}}
