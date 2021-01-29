@@ -38,7 +38,19 @@ app.get('/', function (req,res){
 })
 
 app.get('/doeAgora', function(req,res){
+  if(req.session.nome){
+    
     res.render ('doeAgora')
+
+    }else{
+    res.render('login')
+}
+})
+
+app.get('/destruir', function(req,res){
+   req.session.destroy(function(){
+    res.render ('login')
+});
 })
 
 app.get('/cadastro',function(req,res){
@@ -46,7 +58,13 @@ app.get('/cadastro',function(req,res){
 })
 
 app.get('/cadastroDoacao', function (req,res){
+    if(req.session.nome){
+    
     res.render ('cadastroDoacao')
+
+}else{
+    res.render('login')
+}
 
 })
 
@@ -56,15 +74,39 @@ app.get('/login', function(req,res){
 
 app.post('/login',function (req,res){
 //essas duas linhas abaixo vão vir do banco de dados
-    req.session.nome = 'andre';
-    req.session.senha = 'repolho123'
+//    req.session.nome = 'andre';
+//    req.session.senha = 'repolho123'
+//
+//    if(req.session.nome == req.body.nome && req.body.senha == 'repolho123'){
+//        res.send ("usuario logado")
+//    }else{
+//        res.send ("usuario não existe")
+//    }
 
-    if(req.session.nome == req.body.nome && req.body.senha == 'repolho123'){
-        res.send ("usuario logado")
-    }else{
-        res.send ("usuario não existe")
-    }
+    req.session.nome = req.body.nome;
+    usuario.count({where: { nome: req.session.nome }}).then(function(dados){
+        if(dados >= 1){
+            res.render('paginaInicial')
+        }else{
+            res.send("Usuário não cadastrado" + dados)
+        }
+    })
+    req.session.senha = req.body.senha;
+    usuario.count({where: { senha: req.session.senha }}).then(function(dados){
+        if(dados >= 1){
+            res.render('login')
+        }else{
+            res.send("Usuário não cadastrado" + dados)
+        }
+    })
+
+
+
+
+
+
 })
+
 //criar cadastro usuario
 
 app.post('/cadUsuario',function(req,res){
