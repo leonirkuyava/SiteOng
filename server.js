@@ -39,7 +39,7 @@ app.get('/', function (req,res){
 
 app.get('/doeAgora', function(req,res){
   if(req.session.nome){
-    
+
     res.render ('doeAgora')
 
     }else{
