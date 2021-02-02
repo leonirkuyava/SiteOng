@@ -68,6 +68,10 @@ app.get('/cadastroDoacao', function (req,res){
 
 })
 
+app.get('/cadastroGeral', function(req,res){
+    res.render ('cadastroGeral')
+})
+
 app.get('/login', function(req,res){
     res.render ('login')
 })
