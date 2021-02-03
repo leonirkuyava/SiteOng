@@ -49,7 +49,7 @@ app.get('/doeAgora', function(req,res){
 
 app.get('/destruir', function(req,res){
    req.session.destroy(function(){
-    res.render ('login')
+    res.render ('paginaInicial')
 });
 })
 
@@ -87,28 +87,17 @@ app.post('/login',function (req,res){
 //        res.send ("usuario não existe")
 //    }
 
-    req.session.nome = req.body.nome;
-    usuario.count({where: { nome: req.session.nome }}).then(function(dados){
-        if(dados >= 1){
-            res.render('paginaInicial')
-        }else{
-            res.send("Usuário não cadastrado" + dados)
-        }
-    })
+    req.session.email = req.body.email;
     req.session.senha = req.body.senha;
-    usuario.count({where: { senha: req.session.senha }}).then(function(dados){
-        if(dados >= 1){
-            res.render('login')
+    ong.count({where: { email: req.session.email }&&{senha: req.session.senha}}).then(function(dados){
+        if(dados >= 2){
+            res.render('doeAgora')
         }else{
             res.send("Usuário não cadastrado" + dados)
         }
+        
     })
-
-
-
-
-
-
+    
 })
 
 //criar cadastro usuario

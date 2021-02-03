@@ -6,30 +6,14 @@
 <h1>Login</h1>
 <br>
 <form action="/login" method="POST" id="login" >
-    <input type="text" name="nome" placeholder="Nome / Razão Social "/><br><br>
+    <input type="email" name="email" placeholder="E-mail"/><br><br>
     <input type="password" name="senha" placeholder="Senha"/>
     <br><br>
     <input type="submit" value='Login' class="btn btn-dark">
-    <a href="cadastro" class="btn btn-dark">Cadastrar</a>
+    <a href="cadastroOng" class="btn btn-dark">Cadastrar</a>
 </form>
 </div>
 
 <br>
 <br>
-<table class="table">
-    <tr>
-        <th>Nome</th>
-        <th>Senha</th>
-        <th>Atualizar</th>
-        <th>Excluir</th>
-    </tr>
-    {{#each doador}}
-        <tr>
-            <td>{{nome}}</td>
-            <td>{{senha}}</td>
-            <td><a href="/update/{{id}}">Modificar</a></td>  
-            <td><a href="/delete/{{id}}">Apagar</a></td>
-        </tr>
-    {{/each}}
-</table>
 
