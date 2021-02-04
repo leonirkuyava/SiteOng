@@ -2,15 +2,32 @@
 const express = require ("express")
 const app = express()
 
-const multer = require ("multer")
-
 const handlebars = require("express-handlebars")
 const bodyParser = require("body-parser")
 
-const usuario = require("./models/usuario")
+//const usuario = require("./models/usuario")
 const ong = require("./models/ong")
 const doacao = require("./models/doacao")
 const { removeData } = require("jquery")
+
+
+//configurando multer, para upload de imagem
+const multer = require ("multer")
+
+const storage = multer.diskStorage({
+    destination:(req,file,cb) => {cb(null,'public/imagens')},
+    filename:(req,file,cb) => {cb(null,file.originalname)}
+})
+
+const upload = multer ({storage})
+
+
+
+
+
+
+
+
 
 //Configurar handlebar para
 app.engine('handlebars',handlebars({defaultLayout:'main'}))
@@ -209,19 +226,21 @@ app.get('/cadDoacao',function(req,res){
 
 //criar cadastro ong
 
-app.post('/cadOng',function(req,res){
+app.post('/cadastroOng',upload.single('imagem_prod'),function(req,res){
+    console.log(req.file.originalname)
     ong.create({
-        razaoSocial:req.body.nome,
+        nomeRazaoSocial:req.body.nome,
         senha:req.body.senha,
         email:req.body.email,
-        cnpj:req.body.cpf,
+        cpfCnpj:req.body.cpf,
         endereco:req.body.endereco,
         complemento:req.body.complemento,
         cidade:req.body.cidade,
         estado:req.body.estado,
         cep:req.body.cep,
         telefoneParaContato:req.body.telefoneParaContato,
-        confirmarDados:req.body.confirmarDados
+        confirmarDados:req.body.confirmarDados,
+        foto:req.file.originalname
 
 
     }).then(function(){

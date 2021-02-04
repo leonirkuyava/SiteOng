@@ -1,5 +1,5 @@
 <br><br>
-<form class="container" action="/cadOng" method="POST">
+<form class="container" action="/cadastroOng" method="POST" enctype="multipart/form-data">
   
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -103,7 +103,7 @@
         <img src="loader.gif" alt="A carregar....">
       </div>
       <div id='imageloadbutton'>
-        <input type="file" name="fotos" id="photoimg" multiple="true">
+        <input type="file" name="imagem_prod" multiple="true">
       </div>
     
     <br>
@@ -112,4 +112,23 @@
   </div>
 </form>
 
+<table class="table">
+    <tr>
+        <th>Foto</th>
+        <th>Nome</th>
+        <th>Senha</th>
+        <th>Cep</th>
+        <th>Atualizar</th>
+        <th>Excluir</th>
+    </tr>
+    {{#each doador}}
+        <tr>
+            <td><img src="/static/imagens/{{foto}}"></td>
+            <td>{{nome}}</td>
+            <td>{{senha}}</td>
+            <td><a href="/update/{{id}}">Modificar</a></td>  
+            <td><a href="/delete/{{id}}">Apagar</a></td>
+        </tr>
+    {{/each}}
+</table>
   

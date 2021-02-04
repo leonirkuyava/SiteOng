@@ -1,7 +1,7 @@
 const db = require('./db')
 
 const ong = db.sequelize.define('ong',{
-    nome_razaoSocial:{
+    nomeRazaoSocial:{
         type:db.Sequelize.STRING
     },
     senha:{
@@ -10,7 +10,7 @@ const ong = db.sequelize.define('ong',{
     email:{
         type:db.Sequelize.STRING
     },
-    cpf_cnpj:{
+    cpfCnpj:{
         type:db.Sequelize.STRING
     },
     endereco:{
@@ -32,6 +32,9 @@ const ong = db.sequelize.define('ong',{
         type:db.Sequelize.STRING
     },
     confirmarDados:{
+        type:db.Sequelize.STRING
+    },
+    foto:{
         type:db.Sequelize.STRING
     }
 
