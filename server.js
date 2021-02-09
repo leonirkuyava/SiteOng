@@ -143,8 +143,8 @@ app.get('/cadastro',function(req,res){
 
 //vamo criar mais uma rota e ela dara para um formulário
 app.get('/update/:id', function(req,res){
-    usuario.findAll({where:{'id' : req.params.id}}).then(function(doadores){
-        res.render('atualizaUsuario',{doador: doadores.map(pagamento => pagamento.toJSON())})
+    ong.findAll({where:{'id' : req.params.id}}).then(function(ongs){
+        res.render('atualizaUsuario',{ong: ongs.map(cadastramento => cadastramento.toJSON())})
     })
 })
 
@@ -182,7 +182,7 @@ app.get('/update/:id', function(req,res){
 
 //depois vamos criar essa rota que envia para o banco e depois chama o formulario
 app.post('/updateOng',function(req,res){
-    ong.update({nome:req.body.nome,senha:req.body.senha},{
+    ong.update({nome:req.body.email,senha:req.body.senha},{
         where:{id:req.body.codigo}}
     ).then(function(){
         ong.findAll().then(function(ongs){
