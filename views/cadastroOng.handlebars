@@ -121,11 +121,12 @@
         <th>Atualizar</th>
         <th>Excluir</th>
     </tr>
-    {{#each doador}}
+    {{#each ong}}
         <tr>
             <td><img src="/static/imagens/{{foto}}"></td>
-            <td>{{nome}}</td>
+            <td>{{nomeRazaoSocial}}</td>
             <td>{{senha}}</td>
+            <td>{{cpfCnpj}}</td>
             <td><a href="/update/{{id}}">Modificar</a></td>  
             <td><a href="/delete/{{id}}">Apagar</a></td>
         </tr>

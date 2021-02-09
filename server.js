@@ -21,14 +21,6 @@ const storage = multer.diskStorage({
 
 const upload = multer ({storage})
 
-
-
-
-
-
-
-
-
 //Configurar handlebar para
 app.engine('handlebars',handlebars({defaultLayout:'main'}))
 app.set('view engine','handlebars')
@@ -55,7 +47,7 @@ app.get('/', function (req,res){
 })
 
 app.get('/doeAgora', function(req,res){
-  if(req.session.nome){
+  if(req.session.email){
 
     res.render ('doeAgora')
 
@@ -75,12 +67,12 @@ app.get('/cadastro',function(req,res){
 })
 
 app.get('/cadastroDoacao', function (req,res){
-    if(req.session.nome){
+    if(req.session.email){
     
-    res.render ('cadastroDoacao')
+   res.render ('cadastroDoacao')
 
 }else{
-    res.render('login')
+   res.render('login')
 }
 
 })
@@ -108,7 +100,7 @@ app.post('/login',function (req,res){
     req.session.senha = req.body.senha;
     ong.count({where: { email: req.session.email }&&{senha: req.session.senha}}).then(function(dados){
         if(dados >= 2){
-            res.render('doeAgora')
+            res.render('paginaInicial')
         }else{
             res.send("Usuário não cadastrado" + dados)
         }
@@ -117,11 +109,12 @@ app.post('/login',function (req,res){
     
 })
 
+
 //criar cadastro usuario
 
 app.post('/cadUsuario',function(req,res){
-    usuario.create({
-        nome:req.body.nome,
+   usuario.create({
+       nome:req.body.nome,
         senha:req.body.senha,
         email:req.body.email,
         cpf:req.body.cpf,
@@ -211,7 +204,7 @@ app.post('/cadDoacao',function(req,res){
        
     }).then(function(){
         doacao.findAll().then(function(doacoes){
-        res.render('cadastroDoacao', {doacao: doacoes.map(cadastramento => cadastramento.toJSON())})
+        res.render('cadastroDoacao', {doacao: doacoes.map(cadastramento1 => cadastramento1.toJSON())})
     })
     }).catch(function(erro){
         res.send("Erro"+erro)
@@ -220,7 +213,7 @@ app.post('/cadDoacao',function(req,res){
 })
 app.get('/cadDoacao',function(req,res){
     doacao.findAll().then(function(doacoes){
-        res.render('cadastroDoacao',{doacao:doacoes.map(cadastramento=> cadastramento.toJSON())})
+        res.render('cadastroDoacao',{doacao:doacoes.map(cadastramento1=> cadastramento1.toJSON())})
     })
 })
 
@@ -258,15 +251,32 @@ app.get('/cadastroOng',function(req,res){
     })
 })
 
-//Deletar informações
+
+//Deletar informações Ong
 
 app.get('/delete/:id',function(req,res){
-    usuario.destroy({
+    ong.destroy({
         where:{'id': req.params.id}
     }).then(function(){
-        usuario.findAll().then(function(doadores){
-            res.render('cadastro',{doador: doadores.map(
-                pagamento => pagamento.toJSON())})
+        ong.findAll().then(function(ongs){
+            res.render('cadastroOng',{ong: ongs.map(
+               cadastramento => cadastramento.toJSON())})
+        })
+
+      .catch(function(){res.send("não deu certo")
+        })
+    })
+});
+
+//Deletar informações Cadastro Doação
+
+app.get('/delete/:id',function(req,res){
+    doacao.destroy({
+        where:{'id': req.params.id}
+    }).then(function(){
+        doacao.findAll().then(function(doacoes){
+            res.render('cadastroDoacao',{doacao: doacoes.map(
+               cadastramento1 => cadastramento1.toJSON())})
         })
 
       .catch(function(){res.send("não deu certo")
