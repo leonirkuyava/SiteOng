@@ -9,7 +9,9 @@ const doacao = db.sequelize.define('doacao',{
     },
     nivel:{
         type:db.Sequelize.STRING
-    }})
+    },
+
+})
 
 //Cria tabela - somente uma vez
 //doacao.sync({force:true})

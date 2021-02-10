@@ -34,10 +34,17 @@ body nav div div a {
 
 #tamanhoDaFonte{
     font-size: 25px;
-    text-align: center;
+   
 }
 
 #atualizarUsuario {
     text-align: center;
 }
 
+#cssCadastro {
+    text-align: center;
+}
+
+.card img {
+    width: 70;
+}
