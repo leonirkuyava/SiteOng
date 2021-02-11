@@ -9,7 +9,7 @@ const doacao = db.sequelize.define('doacao',{
     },
     nivel:{
         type:db.Sequelize.STRING
-    },
+    }
 
 })
 

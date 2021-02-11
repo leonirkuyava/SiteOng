@@ -1,112 +1,24 @@
 
-<div style="background-color:#e9ecef;" >
-<br>
-<br>
 <div  style="background-color:#e9ecef;" class=" container">
-  <div class="card-deck">
-    <div class="card">
-      <img src="/static/imagens/copal.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Ong 1</h5>
-        <p class="card-text"> Breve descrição sobre a Ong</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted"><a href='#' class="btn btn-dark">Doação que a Ong precisa (roupa, dinheiro, comida, brinquedos)</a></small>
-      </div>
-    </div>
-    <div class="card">
-      <img src="/static/imagens/ACHA.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Ong 2</h5>
-        <p class="card-text">Breve descrição sobre a Ong</p>
-      </div>
-      <div class="card-footer">
-       <small class="text-muted"><a href='#' class="btn btn-dark">Doação que a Ong precisa (roupa, dinheiro, comida, brinquedos)</a></small>
-      </div>
-    </div>
-    <div class="card">
-      <img src="/static/imagens/ACHA.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Ong 3</h5>
-        <p class="card-text">Breve descrição sobre a Ong</p>
-      </div>
-      <div style="background-color:#e9ecef;" class="card-footer">
-        <small class="text-muted"><a href="#" class="btn btn-dark">Doação que a Ong precisa (roupa, dinheiro, comida, brinquedos)</a></small>
-      </div>
+  <br><br><br>
+  
+<div class="card-deck">
+{{#each doacao}}
+  <div class="card">
+    <img src="/static/imagens/{{foto}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{descricaoOng}}</h5>
+      <p class="card-text">{{email}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
+    {{/each}}
+  
+
+</div> 
 </div>
-<br>
-<br>
-<div style="background-color:#e9ecef;" class=" container">
-  <div class="card-deck">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Ong 1</h5>
-        <p class="card-text"> Breve descrição sobre a Ong</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted"><a href='#' class="btn btn-dark">Doação que a Ong precisa (roupa, dinheiro, comida, brinquedos)</a></small>
-      </div>
-    </div>
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Ong 2</h5>
-        <p class="card-text">Breve descrição sobre a Ong</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted"><a href='#' class="btn btn-dark">Doação que a Ong precisa (roupa, dinheiro, comida, brinquedos)</a></small>
-      </div>
-    </div>
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Ong 3</h5>
-        <p class="card-text">Breve descrição sobre a Ong</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted"><a href="#" class="btn btn-dark">Doação que a Ong precisa (roupa, dinheiro, comida, brinquedos)</a></small>
-      </div>
-    </div>
-  </div>
-</div>
-<br>
-<br>
-<div style="background-color:#e9ecef;" class=" container">
-  <div class="card-deck">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Ong 1</h5>
-        <p class="card-text"> Breve descrição sobre a Ong</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted"><a href='#' class="btn btn-dark">Doação que a Ong precisa (roupa, dinheiro, comida, brinquedos)</a></small>
-      </div>
-    </div>
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Ong 2</h5>
-        <p class="card-text">Breve descrição sobre a Ong</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted"><a href='#' class="btn btn-dark">Doação que a Ong precisa (roupa, dinheiro, comida, brinquedos)</a></small>
-      </div>
-    </div>
-    <div class="card">
-      <img src="/public/imagens/ACHA.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Ong 3</h5>
-        <p class="card-text">Breve descrição sobre a Ong</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted"><a href="#" class="btn btn-dark">Doação que a Ong precisa (roupa, dinheiro, comida, brinquedos)</a></small>
-      </div>
-    </div>
-  </div>
-  <br><br><br><br>
-</div>
-</div>
+   
+               
+
+
+

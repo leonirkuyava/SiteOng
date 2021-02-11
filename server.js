@@ -46,14 +46,18 @@ app.get('/', function (req,res){
 
 })
 
-app.get('/doeAgora', function(req,res){
-  if(req.session.email){
+app.get('/doeAgora',function(req,res){  
+    ong.findAll().then(function(doacoes){
+         res.render('doeAgora', {doacao: doacoes.map(pagamento => pagamento.toJSON())})
+     })
 
-    res.render ('doeAgora')
+     /*if(req.session.email){
+     res.render('doeAgora')
 
     }else{
-    res.render('login')
-}
+        res.render('login')
+    }*/
+    
 })
 
 app.get('/destruir', function(req,res){
@@ -233,7 +237,8 @@ app.post('/cadastroOng',upload.single('imagem_prod'),function(req,res){
         cep:req.body.cep,
         telefoneParaContato:req.body.telefoneParaContato,
         confirmarDados:req.body.confirmarDados,
-        foto:req.file.originalname
+        foto:req.file.originalname,
+        descricaoOng:req.body.descricao
 
 
     }).then(function(){

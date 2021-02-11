@@ -36,6 +36,9 @@ const ong = db.sequelize.define('ong',{
     },
     foto:{
         type:db.Sequelize.STRING
+    },
+    descricaoOng:{
+        type:db.Sequelize.STRING
     }
 
 })
