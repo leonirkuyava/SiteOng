@@ -1,24 +1,21 @@
-
-<div  style="background-color:#e9ecef;" class=" container">
+<div style="background-color:#e9ecef;" class=" container ">
   <br><br><br>
-  
-<div class="card-deck">
-{{#each doacao}}
-  <div class="card">
-    <img src="/static/imagens/{{foto}}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{descricaoOng}}</h5>
-      <p class="card-text">{{email}}</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+  <div class="card-deck">
+    <div class="row">
+      {{#each doacao}}
+      <div class="col-3">
+        <div class="card " >
+          <img src="/static/imagens/{{foto}}" class="card-img-top" alt="..." >
+          <div class="card-body">
+            <h5 class="card-title">{{descricaoOng}}</h5>
+            <p class="card-text">{{email}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <br>
+      </div>
+      {{/each}}
     </div>
   </div>
-    {{/each}}
-  
-
-</div> 
 </div>
-   
-               
-
-
-

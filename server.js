@@ -47,16 +47,17 @@ app.get('/', function (req,res){
 })
 
 app.get('/doeAgora',function(req,res){  
-    ong.findAll().then(function(doacoes){
-         res.render('doeAgora', {doacao: doacoes.map(pagamento => pagamento.toJSON())})
-     })
+    
 
-     /*if(req.session.email){
-     res.render('doeAgora')
+     if(req.session.email){
+        //res.render('doeAgora')
+        ong.findAll().then(function(doacoes){
+            res.render('doeAgora', {doacao: doacoes.map(pagamento => pagamento.toJSON())})
+        })
 
     }else{
         res.render('login')
-    }*/
+    }
     
 })
 

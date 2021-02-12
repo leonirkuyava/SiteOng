@@ -22,7 +22,6 @@ body nav div div a {
     font-size: 25px;
 }
 
-
 #tituloLogin {
     text-align: center;
 }
@@ -45,6 +44,11 @@ body nav div div a {
     text-align: center;
 }
 
-.card img {
-    width: 70;
+.card-img-top {
+    height: 70%;
+    
+}
+
+body {
+    background-color:#e9ecef;
 }
